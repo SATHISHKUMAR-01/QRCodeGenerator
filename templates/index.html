@@ -47,7 +47,7 @@
           Generate a plain QR Code
         </button>
         <button class="btn btn-outline-secondary">
-          Generate QR Code from Picture/Logo
+          Generate QR Code from Image
         </button>
         <button class="btn btn-outline-secondary">
           Generate QR Code with LOGO
@@ -60,6 +60,7 @@
       <div class="card w-50 mx-auto p-3" id="plainQRCode">
         <form action="http://localhost:5000/plainQRCode" method="POST">
             <h3> Plain QR Code </h3>
+            <br>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
                 <input type="text" class="form-control shadow" id="input" name="input" placeholder="www.abc.com" required>
@@ -97,7 +98,8 @@
        <!-- Form for QR Code from LOGO -->
       <div class="card w-50 mx-auto p-3" id="QRCodeFromLogo">
         <form action="http://localhost:5000/QRCodeFromLogo" method="POST" enctype = "multipart/form-data">
-            <h3> QR Code from Logo/Picture </h3>
+            <h3> QR Code from Image </h3>
+            <br>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
                 <input type="text" class="form-control shadow" id="input" name="input" placeholder="www.abc.com" required>
@@ -116,6 +118,7 @@
       <div class="card w-50 mx-auto p-3" id="QRCodeWithLogo">
         <form action="http://localhost:5000/QRCodeWithLogo" method="POST"  enctype = "multipart/form-data">
             <h3> QR Code With Logo </h3>
+            <br>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
                 <input type="text" class="form-control shadow" id="input" name="input"  placeholder="www.abc.com" required>
