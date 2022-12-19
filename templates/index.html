@@ -58,34 +58,34 @@
        
       <!-- Form for Plain QR Code -->
       <div class="card w-50 mx-auto p-3" id="plainQRCode">
-        <form action="" method="POST">
+        <form action="http://localhost:5000/plainQRCode" method="POST">
             <h3> Plain QR Code </h3>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
-                <input type="text" class="form-control shadow" id="name" name="name" placeholder="www.abc.com" required>
+                <input type="text" class="form-control shadow" id="input" name="input" placeholder="www.abc.com" required>
             </div>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
                 <select class="form-select" aria-label="Default select example" name="qrColor" required>
-                    <option value="black" selected > BLACK </option>
-                    <option value="red" class="m-5">RED</option>
-                    <option value="blue" class="m-5">BLUE</option>
-                    <option value="orange" class="m-5">ORANGE</option>
-                    <option value="green" class="m-5">GREEN</option>
-                    <option value="yellow" class="m-5">YELLOW</option>
-                    <option value="white" class="m-5">WHITE</option>
+                  <option value="black" selected > Black </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="white" class="m-5">White</option>
                 </select>
             </div>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
                 <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
-                    <option value="white" selected > WHITE </option>
-                    <option value="red" class="m-5">RED</option>
-                    <option value="blue" class="m-5">BLUE</option>
-                    <option value="orange" class="m-5">ORANGE</option>
-                    <option value="green" class="m-5">GREEN</option>
-                    <option value="yellow" class="m-5">YELLOW</option>
-                    <option value="black" class="m-5">BLACK</option>
+                  <option value="white" selected > White </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="black" class="m-5">Black</option>
                 </select>
             </div>
             <div class="text-center ">
@@ -96,11 +96,11 @@
  
        <!-- Form for QR Code from LOGO -->
       <div class="card w-50 mx-auto p-3" id="QRCodeFromLogo">
-        <form action="" method="POST">
+        <form action="http://localhost:5000/QRCodeFromLogo" method="POST" enctype = "multipart/form-data">
             <h3> QR Code from Logo/Picture </h3>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
-                <input type="text" class="form-control shadow" id="name" name="name" placeholder="www.abc.com" required>
+                <input type="text" class="form-control shadow" id="input" name="input" placeholder="www.abc.com" required>
             </div>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add the Logo/Picture : </label>
@@ -114,34 +114,34 @@
 
       <!-- Form for QR Code with LOGO -->
       <div class="card w-50 mx-auto p-3" id="QRCodeWithLogo">
-        <form action="" method="POST">
+        <form action="http://localhost:5000/QRCodeWithLogo" method="POST"  enctype = "multipart/form-data">
             <h3> QR Code With Logo </h3>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
-                <input type="text" class="form-control shadow" id="name" name="name" placeholder="www.abc.com" required>
+                <input type="text" class="form-control shadow" id="input" name="input"  placeholder="www.abc.com" required>
             </div>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
                 <select class="form-select" aria-label="Default select example" name="qrColor" required>
-                    <option value="black" selected > BLACK </option>
-                    <option value="red" class="m-5">RED</option>
-                    <option value="blue" class="m-5">BLUE</option>
-                    <option value="orange" class="m-5">ORANGE</option>
-                    <option value="green" class="m-5">GREEN</option>
-                    <option value="yellow" class="m-5">YELLOW</option>
-                    <option value="white" class="m-5">WHITE</option>
+                    <option value="black" selected > Black </option>
+                    <option value="red" class="m-5">Red</option>
+                    <option value="blue" class="m-5">Blue</option>
+                    <option value="orange" class="m-5">Orange</option>
+                    <option value="green" class="m-5">Green</option>
+                    <option value="yellow" class="m-5">Yellow</option>
+                    <option value="white" class="m-5">White</option>
                 </select>
             </div>
             <div class="mb-3 ">
                 <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
                 <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
-                    <option value="white" selected > WHITE </option>
-                    <option value="red" class="m-5">RED</option>
-                    <option value="blue" class="m-5">BLUE</option>
-                    <option value="orange" class="m-5">ORANGE</option>
-                    <option value="green" class="m-5">GREEN</option>
-                    <option value="yellow" class="m-5">YELLOW</option>
-                    <option value="black" class="m-5">BLACK</option>
+                    <option value="white" selected > White </option>
+                    <option value="red" class="m-5">Red</option>
+                    <option value="blue" class="m-5">Blue</option>
+                    <option value="orange" class="m-5">Orange</option>
+                    <option value="green" class="m-5">Green</option>
+                    <option value="yellow" class="m-5">Yellow</option>
+                    <option value="black" class="m-5">Black</option>
                 </select>
             </div>
             <div class="mb-3 ">
