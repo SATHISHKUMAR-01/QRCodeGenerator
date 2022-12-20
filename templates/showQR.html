@@ -1,87 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your QRCode</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css"
-      integrity="sha512-R+xPS2VPCAFvLRy+I4PgbwkWjw1z5B5gNDYgJN5LfzV4gGNeRQyVrY7Uk59rX+c8tzz63j8DeZPLqmXvBxj8pA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-   
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-        
-  </head>
 
-  <body class="container">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your QRCode</title>
 
-    <p class="text-center text-secondary p-1 fs-1"> QR Code</p>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <div class="d-flex">
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <link rel="stylesheet" href="../static/css/showQR.css">
 
-      <div class="card shadow w-100 p-3">
-        <br>
-        <div class="text-center  mx-auto" id="qr">
-          <h3 id="msg_top" class="text-center m-0 p-0"></h3>
-          <img src="../static/{{image}}" width="300px" height="300px" id="qr_image"/>
-          <h3 id="msg_bottom" class="text-center m-0 p-0"></h3>
-        </div>
-        <br><br>
-        <div class="d-flex justify-content-around ">
-          <button onclick="downloadimage()" class="btn btn-secondary" > Download </button>
-          <button onclick="cancel()" class="btn btn-secondary" > Cancel </button>
-        </div>
+</head>
+
+<body class="container">
+
+  <p class="text-center fw-bold text-dark pt-3 fs-1"> QR Code</p>
+
+  <br>
+
+  <div id="card-body">
+
+    <div class="card shadow w-100 p-3" id="qrcard">
+      <br><br>
+      <div class="text-center  mx-auto" id="qr">
+        <h3 id="msg_top" class="text-center m-0 p-0"></h3>
+        <img src="../static/mail.png" width="300px" height="300px" id="qr_image" />
+        <h3 id="msg_bottom" class="text-center m-0 p-0"></h3>
       </div>
-
-      <div class="w-100">
-        <p class="text-secondary fs-2 text-center"> Customization </p>
-        <div class="ps-4">
-          <p class="form-label"><i class="fa-solid fa-edit"></i> Add a message :</p>
-          <input type="text" class="form-control" name="text" onchange=getMsg(this.value)>
-          <br> 
-          <p class="form-label"><i class="fa-solid fa-edit"></i> Add position of message (mandatory) :</p>
-          <select class="form-select" aria-label="Default select example" name="position" onchange=getPosition(this.value)>
-            <option value="none" selected > None </option>
-            <option value="bottom" class="m-5">Bottom</option>
-            <option value="top" class="m-5">Top</option>  
-          </select>
-          <br>
-          <p class="form-label"><i class="fa-solid fa-edit"></i> Add message color :</p>
-          <input type="color" class="form-control" name="textcolor" onchange=getcolor(this.value) >                             
-          <br>
-          <p class="form-label"><i class="fa-solid fa-edit"></i> Add border color for QR :</p>
-          <input type="color" class="form-control" name="backgroundcolorQR" onchange=getbgcolorQR(this.value) >
-          <br>
-          <p class="form-label"><i class="fa-solid fa-edit"></i> Add background color for message:</p>
-          <input type="color" class="form-control" name="backgroundcolorMsg" onchange=getbgcolorMsg(this.value) >
-        </div>
+      <br><br>
+      <div class="d-flex justify-content-around ">
+        <button onclick="downloadimage()" class="btn btn-secondary"> Download </button>
+        <button onclick="cancel()" class="btn btn-secondary"> Cancel </button>
       </div>
-
     </div>
-  
-  </body>
-  <script src="../static/js/showQR.js"></script>
+
+    <div class="w-100 bg-light p-2 m-1 shadow" id="customizecard">
+      <p class="text-secondary fs-2 text-center">Add Customization </p>
+      <div class="ps-4">
+        <p class="form-label"><i class="fa-solid fa-edit"></i> Add a message :</p>
+        <input type="text" class="form-control" name="text" onchange=getMsg(this.value)>
+        <br>
+        <p class="form-label"><i class="fa-solid fa-edit"></i> Add position of message (mandatory) :</p>
+        <select class="form-select" aria-label="Default select example" name="position"
+          onchange=getPosition(this.value)>
+          <option value="none" selected> None </option>
+          <option value="bottom" class="m-5">Bottom</option>
+          <option value="top" class="m-5">Top</option>
+        </select>
+        <br>
+        <p class="form-label"><i class="fa-solid fa-edit"></i> Add message color :</p>
+        <input type="color" class="form-control" name="textcolor" onchange=getcolor(this.value)>
+        <br>
+        <p class="form-label"><i class="fa-solid fa-edit"></i> Add border color for QR :</p>
+        <input type="color" class="form-control" name="backgroundcolorQR" onchange=getbgcolorQR(this.value)>
+        <br>
+        <p class="form-label "><i class="fa-solid fa-edit"></i> Add background color for message:</p>
+        <input type="color" class="form-control " name="backgroundcolorMsg" onchange=getbgcolorMsg(this.value)>
+        <br>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+<script src="../static/js/showQR.js"></script>
 
 </html>

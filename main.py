@@ -109,6 +109,7 @@ def generateWhatsappQRCode():
         img = generateQRImage(input,qrColor,qrBgColor)
     return save(img,"whatsapp.png")
 
+
 # Function to generate QR Code for Telephone
 @app.route('/telephone', methods = ['POST'])
 def generateTelephoneQRCode():
