@@ -5,68 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR Code Generator</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css"
-      integrity="sha512-R+xPS2VPCAFvLRy+I4PgbwkWjw1z5B5gNDYgJN5LfzV4gGNeRQyVrY7Uk59rX+c8tzz63j8DeZPLqmXvBxj8pA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <link rel="stylesheet" href="../static/css/index.css">
   </head>
   <body class="container">
 
     <!-- Heading -->
-    <div class="text-secondary fs-1 p-2 text-center border shadow m-2 w-50 mx-auto" >
-      QR Code Generator <i class="fa-solid fa-qrcode"></i>
+    <div class="text-secondary fs-1 p-2 text-center  m-2 w-50 mx-auto" >
+      QR Code Generator &nbsp; <i class="fa-solid fa-qrcode"></i>
     </div>
 
     <div class="p-1">
 
       <!-- Buttons -->
-      <div class="d-flex justify-content-around p-2">
-        <button class="btn btn-outline-secondary">
-          Generate a plain QR Code
+      <div class="butttons  text-center  p-2">
+        <button class="btn btn-outline-secondary m-1" >
+          Text <i class="fa-solid fa-font"></i>
+        </button>
+        <button class="btn btn-outline-secondary m-1">
+          URL <i class="fa-solid fa-link"></i>
+        </button>
+        <button class="btn btn-outline-secondary m-1">
+          Mail <i class="fa-solid fa-link"></i>
+        </button>
+        <button class="btn btn-outline-secondary m-1">
+          Whatsapp <i class="fa-brands fa-whatsapp"></i>
+        </button>
+        <button class="btn btn-outline-secondary m-1">
+          Telephone <i class="fa-solid fa-phone"></i>
+        </button>
+        <button class="btn btn-outline-secondary m-1">
+          SMS <i class="fa-solid fa-comment-sms"></i>
+        </button>
+        <button class="btn btn-outline-secondary m-1">
+          Wifi <i class="fa-solid fa-wifi"></i>
         </button>
         <button class="btn btn-outline-secondary">
-          Generate QR Code from Image
-        </button>
-        <button class="btn btn-outline-secondary">
-          Generate QR Code with LOGO
+          QR Code from Image <i class="fa-solid fa-image"></i>
         </button>
       </div>
 
       <br>
-       
-      <!-- Form for Plain QR Code -->
-      <div class="card w-50 mx-auto p-3" id="plainQRCode">
-        <form action="http://localhost:5000/plainQRCode" method="POST">
-            <h3> Plain QR Code </h3>
+
+      <!-- Form for Text -->
+
+      <div class="card w-50 mx-auto p-3" id="text">
+        <form action="http://localhost:5000/text" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for Text </h3>
             <br>
             <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
-                <input type="text" class="form-control shadow" id="input" name="input" placeholder="www.abc.com" required>
+                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Text : </label>
+                <input type="text" class="form-control shadow" id="input" name="input" placeholder="abc" required>
             </div>
             <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
-                <select class="form-select" aria-label="Default select example" name="qrColor" required>
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrColor" required>
                   <option value="black" selected > Black </option>
                   <option value="red" class="m-5">Red</option>
                   <option value="blue" class="m-5">Blue</option>
@@ -74,11 +73,11 @@
                   <option value="green" class="m-5">Green</option>
                   <option value="yellow" class="m-5">Yellow</option>
                   <option value="white" class="m-5">White</option>
-                </select>
+              </select>
             </div>
             <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
-                <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
                   <option value="white" selected > White </option>
                   <option value="red" class="m-5">Red</option>
                   <option value="blue" class="m-5">Blue</option>
@@ -86,13 +85,283 @@
                   <option value="green" class="m-5">Green</option>
                   <option value="yellow" class="m-5">Yellow</option>
                   <option value="black" class="m-5">Black</option>
-                </select>
+              </select>
             </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add Logo (optional) : </label>
+              <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04">
+            </div>
+            <br>
             <div class="text-center ">
-                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn  btn-dark shadow-sm">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn  btn-outline-light shadow-sm">
             </div>
         </form>
       </div>
+
+
+      <!-- Form for Url -->
+
+      <div class="card w-50 mx-auto p-3" id="url">
+        <form action="http://localhost:5000/url" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for URL </h3>
+            <br>
+            <div class="mb-3 ">
+                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> URL : </label>
+                <input type="text" class="form-control shadow" id="input" name="input" placeholder="www.abc.com" required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrColor" required>
+                  <option value="black" selected > Black </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="white" class="m-5">White</option>
+              </select>
+              </div>
+              <div class="mb-3 ">
+                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
+                  <option value="white" selected > White </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="black" class="m-5">Black</option>
+              </select>
+             </div>
+             <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add Logo (optional) : </label>
+              <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" >
+             </div>
+            <br>
+            <div class="text-center ">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn btn-outline-light shadow-sm">
+            </div>
+        </form>
+      </div>
+
+      <!-- Form for Mail -->
+
+      <div class="card w-50 mx-auto p-3" id="mail">
+        <form action="http://localhost:5000/mail" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for Mail </h3>
+            <br>
+            <div class="mb-3 ">
+                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Mail Id : </label>
+                <input type="email" class="form-control shadow" id="mail" name="mail" placeholder="www.abc.com" required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Subject : </label>
+              <input type="text" class="form-control shadow" id="sub" name="sub"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Body : </label>
+              <input type="text" class="form-control shadow" id="body" name="body" required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrColor" required>
+                  <option value="black" selected > Black </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="white" class="m-5">White</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
+                  <option value="white" selected > White </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="black" class="m-5">Black</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add Logo (optional) : </label>
+              <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" >
+            </div>
+            <br>
+            <div class="text-center ">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn btn-outline-light shadow-sm">
+            </div>
+        </form>
+      </div>
+
+      <!-- Form for Whatsapp -->
+
+      <div class="card w-50 mx-auto p-3" id="whatsapp">
+        <form action="http://localhost:5000/whatsapp" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for Whatsapp </h3>
+            <br>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Whatsapp number : </label>
+              <input type="text" class="form-control shadow" id="whatsappNum" name="whatsappNum"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Message : </label>
+              <input type="text" class="form-control shadow" id="message" name="message"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrColor" required>
+                  <option value="black" selected > Black </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="white" class="m-5">White</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
+                  <option value="white" selected > White </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="black" class="m-5">Black</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add Logo (optional) : </label>
+              <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" >
+            </div>
+            <br>
+            <div class="text-center ">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn btn-outline-light shadow-sm">
+            </div>
+        </form>
+      </div>
+
+      <!-- Form for Telephone -->
+
+      <div class="card w-50 mx-auto p-3" id="telephone">
+        <form action="http://localhost:5000/telephone" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for Telephone </h3>
+            <br>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Telephone number : </label>
+              <input type="text" class="form-control shadow" id="telephoneNum" name="telephoneNum"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrColor" required>
+                  <option value="black" selected > Black </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="white" class="m-5">White</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
+                  <option value="white" selected > White </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="black" class="m-5">Black</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add Logo (optional) : </label>
+              <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" >
+            </div>
+            <br>
+            <div class="text-center ">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn btn-outline-light shadow-sm">
+            </div>
+        </form>
+      </div>
+
+      <!-- Form for SMS -->
+
+      <div class="card w-50 mx-auto p-3" id="sms">
+        <form action="http://localhost:5000/sms" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for SMS </h3>
+            <br>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Mobile number : </label>
+              <input type="text" class="form-control shadow" id="mobileNum" name="mobileNum"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Message : </label>
+              <input type="text" class="form-control shadow" id="message" name="message"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrColor" required>
+                  <option value="black" selected > Black </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="white" class="m-5">White</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
+              <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
+                  <option value="white" selected > White </option>
+                  <option value="red" class="m-5">Red</option>
+                  <option value="blue" class="m-5">Blue</option>
+                  <option value="orange" class="m-5">Orange</option>
+                  <option value="green" class="m-5">Green</option>
+                  <option value="yellow" class="m-5">Yellow</option>
+                  <option value="black" class="m-5">Black</option>
+              </select>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add Logo (optional) : </label>
+              <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" >
+            </div>
+            <br>
+            <div class="text-center ">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn btn-outline-light shadow-sm">
+            </div>
+        </form>
+      </div>
+
+      <!-- Form for Wifi -->
+
+      <div class="card w-50 mx-auto p-3" id="wifi">
+        <form action="http://localhost:5000/wifi" method="POST" enctype = "multipart/form-data">
+            <h3> QR Code for WIFI </h3>
+            <br>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Wifi ID : </label>
+              <input type="text" class="form-control shadow" id="wifi" name="wifi"  required>
+            </div>
+            <div class="mb-3 ">
+              <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Password : </label>
+              <input type="password" class="form-control shadow" id="password" name="password"  required>
+            </div>
+            <br>
+            <div class="text-center ">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn  btn-outline-light shadow-sm">
+            </div>
+        </form>
+      </div>
+       
+      
  
        <!-- Form for QR Code from LOGO -->
       <div class="card w-50 mx-auto p-3" id="QRCodeFromLogo">
@@ -108,54 +377,12 @@
                 <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" required>
             </div>
             <div class="text-center ">
-                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn  btn-dark shadow-sm">
+                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn  btn-outline-light shadow-sm">
             </div>
         </form>
       </div>
 
-      <!-- Form for QR Code with LOGO -->
-      <div class="card w-50 mx-auto p-3" id="QRCodeWithLogo">
-        <form action="http://localhost:5000/QRCodeWithLogo" method="POST"  enctype = "multipart/form-data">
-            <h3> QR Code With Logo </h3>
-            <br>
-            <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Enter the Text/URL : </label>
-                <input type="text" class="form-control shadow" id="input" name="input"  placeholder="www.abc.com" required>
-            </div>
-            <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> QR Code Color : </label>
-                <select class="form-select" aria-label="Default select example" name="qrColor" required>
-                    <option value="black" selected > Black </option>
-                    <option value="red" class="m-5">Red</option>
-                    <option value="blue" class="m-5">Blue</option>
-                    <option value="orange" class="m-5">Orange</option>
-                    <option value="green" class="m-5">Green</option>
-                    <option value="yellow" class="m-5">Yellow</option>
-                    <option value="white" class="m-5">White</option>
-                </select>
-            </div>
-            <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Background Color : </label>
-                <select class="form-select" aria-label="Default select example" name="qrBgColor" required>
-                    <option value="white" selected > White </option>
-                    <option value="red" class="m-5">Red</option>
-                    <option value="blue" class="m-5">Blue</option>
-                    <option value="orange" class="m-5">Orange</option>
-                    <option value="green" class="m-5">Green</option>
-                    <option value="yellow" class="m-5">Yellow</option>
-                    <option value="black" class="m-5">Black</option>
-                </select>
-            </div>
-            <div class="mb-3 ">
-                <label for="name" class="form-label "> <i class="fa-solid fa-edit"></i> Add the Logo : </label>
-                <input type="file"  name="picture" id="picture" class="form-control" aria-describedby="inputGroupFileAddon04" required>
-            </div>
-            <div class="text-center ">
-                <input type="submit" value="Generate QR Code" id="GenerateQRCode" name="GenerateQRCode" class="btn  btn-dark shadow-sm">
-            </div>
-        </form>
-      </div>
-
+    
 
     </div>
 

@@ -44,9 +44,9 @@
       <div class="card shadow w-100 p-3">
         <br>
         <div class="text-center  mx-auto" id="qr">
-          <h3 id="msg_top" class="text-center"></h3>
+          <h3 id="msg_top" class="text-center m-0 p-0"></h3>
           <img src="../static/{{image}}" width="300px" height="300px" id="qr_image"/>
-          <h3 id="msg_bottom" class="text-center"></h3>
+          <h3 id="msg_bottom" class="text-center m-0 p-0"></h3>
         </div>
         <br><br>
         <div class="d-flex justify-content-around ">
@@ -58,48 +58,24 @@
       <div class="w-100">
         <p class="text-secondary fs-2 text-center"> Customization </p>
         <div class="ps-4">
-          <p class="form-label">Add a message :</p>
+          <p class="form-label"><i class="fa-solid fa-edit"></i> Add a message :</p>
           <input type="text" class="form-control" name="text" onchange=getMsg(this.value)>
           <br> 
-          <p class="form-label">Add position of message (mandatory) :</p>
+          <p class="form-label"><i class="fa-solid fa-edit"></i> Add position of message (mandatory) :</p>
           <select class="form-select" aria-label="Default select example" name="position" onchange=getPosition(this.value)>
             <option value="none" selected > None </option>
             <option value="bottom" class="m-5">Bottom</option>
             <option value="top" class="m-5">Top</option>  
           </select>
           <br>
-          <p class="form-label">Add message color :</p>
-          <select class="form-select" aria-label="Default select example" name="textcolor" onchange=getcolor(this.value)>
-            <option value="black" selected>Black</option>
-            <option value="red" class="m-5">Red</option>
-            <option value="blue" class="m-5">Blue</option>
-            <option value="orange" class="m-5">Orange</option>
-            <option value="green" class="m-5">Green</option>
-            <option value="yellow" class="m-5">Yellow</option>
-            <option value="white" class="m-5">White</option>
-          </select>
+          <p class="form-label"><i class="fa-solid fa-edit"></i> Add message color :</p>
+          <input type="color" class="form-control" name="textcolor" onchange=getcolor(this.value) >                             
           <br>
-          <p class="form-label">Add background color for QR :</p>
-          <select class="form-select" aria-label="Default select example" name="backgroundcolor" onchange=getbgcolorQR(this.value)>
-            <option value="white" selected > White </option>
-            <option value="red" class="m-5">Red</option>
-            <option value="blue" class="m-5">Blue</option>
-            <option value="orange" class="m-5">Orange</option>
-            <option value="green" class="m-5">Green</option>
-            <option value="yellow" class="m-5">Yellow</option>
-            <option value="black" class="m-5">Black</option>
-          </select>
+          <p class="form-label"><i class="fa-solid fa-edit"></i> Add border color for QR :</p>
+          <input type="color" class="form-control" name="backgroundcolorQR" onchange=getbgcolorQR(this.value) >
           <br>
-          <p class="form-label">Add background color for message:</p>
-          <select class="form-select" aria-label="Default select example" name="backgroundcolor" onchange=getbgcolorMsg(this.value)>
-            <option value="white" selected > White </option>
-            <option value="red" class="m-5">Red</option>
-            <option value="blue" class="m-5">Blue</option>
-            <option value="orange" class="m-5">Orange</option>
-            <option value="green" class="m-5">Green</option>
-            <option value="yellow" class="m-5">Yellow</option>
-            <option value="black" class="m-5">Black</option>
-          </select>
+          <p class="form-label"><i class="fa-solid fa-edit"></i> Add background color for message:</p>
+          <input type="color" class="form-control" name="backgroundcolorMsg" onchange=getbgcolorMsg(this.value) >
         </div>
       </div>
 

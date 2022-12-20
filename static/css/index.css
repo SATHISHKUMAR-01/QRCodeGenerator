@@ -1,0 +1,31 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css");
+
+
+#text {
+    display: block;
+}
+
+#url,
+#mail,
+#whatsapp,
+#telephone,
+#sms,
+#wifi,
+#QRCodeFromLogo {
+    display: none;
+}
+
+#text,
+#url,
+#mail,
+#whatsapp,
+#telephone,
+#sms,
+#wifi,
+#QRCodeFromLogo {
+    background-image: linear-gradient(to bottom, #121313, #1c1f1f, #262a2a, #303637, #3a4344);
+    color: whitesmoke;
+    border-radius: 10px;
+}
