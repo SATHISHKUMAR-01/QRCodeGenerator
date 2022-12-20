@@ -75,7 +75,7 @@ def generateUrlQRCodeF():
 # Function to generate QR Code for Mail
 @app.route('/mail', methods = ['POST'])
 def generateMailQRCode():
-    mail = request.form['mail']
+    mail = request.form['mailId']
     sub = request.form['sub']
     body = request.form['body']
     qrColor = request.form['qrColor']
@@ -145,7 +145,7 @@ def generateSmsQRCode():
 # Function to generate QR Code for Wifi
 @app.route('/wifi', methods = ['POST'])
 def generateWifiQRCode():
-    wifiId = request.form['wifi']
+    wifiId = request.form['wifiId']
     password = request.form['password']
     img= wifi.wifi_qrcode(wifiId,False,"WPA",password)
     return save(img,"wifi.png")

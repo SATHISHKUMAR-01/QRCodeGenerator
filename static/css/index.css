@@ -3,6 +3,19 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css");
 
 
+/* body{
+    background-image: linear-gradient(to bottom, #121313, #1c1f1f, #262a2a, #303637, #3a4344);
+    background-repeat: no-repeat;
+   
+}
+.inner-body{
+    border: 5px solid wheat;
+    padding: 5px;
+    margin: 10px;
+    border-radius:10px;
+    background-color: white;
+} */
+
 #text {
     display: block;
 }
@@ -28,4 +41,32 @@
     background-image: linear-gradient(to bottom, #121313, #1c1f1f, #262a2a, #303637, #3a4344);
     color: whitesmoke;
     border-radius: 10px;
+    -webkit-animation: fade-in-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+@-webkit-keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
