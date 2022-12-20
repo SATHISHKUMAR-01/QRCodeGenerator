@@ -158,6 +158,8 @@ def generateQRCodeFromLogo():
     input = request.form['input']
     picture  = request.files['picture']
 
+    print(picture)
+    print(input)
     logo = Image.open(picture)
     qr = qrcode.QRCode(
         version = 1,
